@@ -10,6 +10,16 @@ const todosPokemon = [
         id: "4",
         nombre: "charmander",
         foto: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+    },
+    {
+        id: "7",
+        nombre: "squirtle",
+        foto: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+    },
+    {
+        id:132,
+        nombre: "ditto",
+        foto:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
     }
 ]
 class IndexRouter {
@@ -33,6 +43,7 @@ class IndexRouter {
         });
 
         this.router.get('/pokeNombre/:nombre', (req, res) => {
+            console.log("Pruebas");
             const poke = this.obtenerPokemonPorNombre(req.params.nombre);
             res.send(poke);
         });

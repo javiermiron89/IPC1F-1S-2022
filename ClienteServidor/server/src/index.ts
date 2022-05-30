@@ -28,7 +28,7 @@ class Server {
 
     start(): void {
         this.app.listen(this.app.get('port'), () => {
-            console.log(`Servidor esta corriendo en el puerto`, this.app.get('port'));
+            console.log(`El Servidor esta ejecutando en el puerto`, this.app.get('port'));
         })
     }
 

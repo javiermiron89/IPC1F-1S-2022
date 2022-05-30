@@ -17,4 +17,8 @@ export class PokemonService {
   CargarDatos() : any {
     return this.http.get(`${this.API_URI}/pokeTodos`);
   }
+
+  ObtenerPokemonID(IdPokemon: string): any {
+    return this.http.get(`${this.API_URI}/poke/${IdPokemon}`);
+  }
 }

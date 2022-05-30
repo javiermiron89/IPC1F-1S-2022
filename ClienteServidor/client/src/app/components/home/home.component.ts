@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.ObtenerPokemons();
+    this.ObtenerPokemonPorID("4");
   }
 
   ObtenerPokemons(){
@@ -26,6 +27,18 @@ export class HomeComponent implements OnInit {
       this.datosPokemon = valores;
       console.log("LISTA DE DATOS");
       console.log(this.datosPokemon);
+    },
+    err => console.log(err));
+  }
+
+  ObtenerPokemonPorID(id: string){
+    this.pokemonService.ObtenerPokemonID(id).subscribe(async (res) =>
+    {
+      let valores: any = res;
+      this.datosPokemon = valores;
+      console.log("EMPIEZA PRUEBA POR ID");
+      console.log(valores);
+      console.log("TERMINA PRUEBA POR ID");
     },
     err => console.log(err));
   }
